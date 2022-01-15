@@ -1,0 +1,62 @@
+version: 2
+
+jobs:
+
+  test_package:
+    docker:
+      - image: ubuntu:xenial
+
+    steps:
+      - checkout
+      - run:
+          name: Setup Miniconda
+          command: |
+            apt update
+            apt install -y wget
+            cd $HOME
+            wget "https://repo.anaconda.com/miniconda/Miniconda3-4.7.10-Linux-x86_64.sh" -O miniconda.sh
+            printf '%s' "8a324adcc9eaf1c09e22a992bb6234d91a94146840ee6b11c114ecadafc68121  miniconda.sh" | sha256sum -c
+            bash miniconda.sh -b -p $HOME/miniconda
+      # Download and cache dependencies
+      - restore_cache:
+          keys:
+          - v1-dependencies-{{ checksum "requirements.txt" }}-{{ checksum "setup.py" }}
+      - run:
+          name: Initialize Conda
+          command: |
+            export PATH="$HOME/miniconda/bin:$PATH"
+            source activate
+            conda install -y scipy pandas numpy pillow==8.4.0            
+      - run:
+          name: Install Python Dependencies
+          command: |
+            export PATH="$HOME/miniconda/bin:$PATH"
+            source activate
+            pip install -r requirements.txt
+      - save_cache:
+          paths:
+            - ./venv
+          key: v1-dependencies-{{ checksum "requirements.txt" }}-{{ checksum "setup.py" }}
+
+      - run:
+          name: Build package, run basic tests
+          command: |
+            export PATH="$HOME/miniconda/bin:$PATH"
+            source activate
+            pip install -e .
+            export CIRCLECI_TESTS="CIRCLECI_TESTS"
+            python -m pytest --color=yes tests/test_api.py tests/test_pangea.py tests/test_pipeline_preprocessing.py tests/test_short_read.py tests/test_versions.py tests/test_assembly.py tests/test_databases.py
+
+      - run:
+          name: Run experimental module tests 1
+          command: |
+            export PATH="$HOME/miniconda/bin:$PATH"
+            source activate
+            export CIRCLECI_TESTS="CIRCLECI_TESTS"
+            python -m pytest --color=yes tests/test_experimental_covid.py tests/test_experimental_strain.py tests/test_strainotyping.py 
+
+workflows:
+  version: 2
+  build_and_deploy:
+    jobs:
+      - test_package

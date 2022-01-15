@@ -1,0 +1,972 @@
+cap2 run pipeline --workers 2  --threads 4 -c config.yaml manifest.txt
+Failed to import extension module: "preclassify"
+Failed to import extension module: "strains"
+Failed to import extension module: "tcems"
+/usr/local/lib/python3.8/dist-packages/luigi-3.0.3-py3.8.egg/luigi/parameter.py:279: UserWarning: Parameter "python" with value "3" is not of type string.
+  warnings.warn('Parameter "{}" with value "{}" is not of type string.'.format(param_name, param_value))
+[DEBUG] <luigi> (2021-12-31 14:43:34,160): Checking if <CapTask::cap2::processed_reads::0a2556edeaf0 zymo_pos_cntrl/> is complete
+[DEBUG] <luigi> (2021-12-31 14:43:34,161): Checking if <CapTask::cap2::hmp_comparison::6dcacd772bbf zymo_pos_cntrl/> is complete
+[DEBUG] <luigi> (2021-12-31 14:43:34,161): Checking if <CapTask::cap2::humann::6dcacd77d27f zymo_pos_cntrl/> is complete
+[DEBUG] <luigi> (2021-12-31 14:43:34,162): Checking if <CapTask::cap2::bracken_kraken2::8c80eaf9ebb9 zymo_pos_cntrl/> is complete
+[DEBUG] <luigi> (2021-12-31 14:43:34,162): Checking if <CapTask::cap2::mash::9fbead1febb9 zymo_pos_cntrl/> is complete
+[DEBUG] <luigi> (2021-12-31 14:43:34,162): Checking if <CapTask::cap2::read_stats::7f9842c8ebb9 zymo_pos_cntrl/> is complete
+[DEBUG] <luigi> (2021-12-31 14:43:34,163): Checking if <CapTask::cap2::jellyfish::9fbead1febb9 zymo_pos_cntrl/> is complete
+[INFO] <luigi> (2021-12-31 14:43:34,163): Informed scheduler that task   ProcessedReads_True_config_yaml_4_e04191ca63   has status   PENDING
+[DEBUG] <luigi> (2021-12-31 14:43:34,163): Checking if CondaPackage(package=jellyfish, config_filename=config.yaml, executable=jellyfish, channel=bioconda, env=CAP_v2, version=None, python=3) is complete
+[DEBUG] <luigi> (2021-12-31 14:43:34,163): Checking if <CapTask::cap2::clean_reads::0a2556ed3663 zymo_pos_cntrl/> is complete
+[INFO] <luigi> (2021-12-31 14:43:34,164): Informed scheduler that task   Jellyfish_True_config_yaml_4_e04191ca63   has status   PENDING
+[DEBUG] <luigi> (2021-12-31 14:43:34,164): Checking if <CapTask::cap2::error_corrected_reads::2e2a15486631 zymo_pos_cntrl/> is complete
+[INFO] <luigi> (2021-12-31 14:43:34,164): Informed scheduler that task   CleanReads_True_config_yaml_4_e04191ca63   has status   PENDING
+[DEBUG] <luigi> (2021-12-31 14:43:34,164): Checking if CondaPackage(package=spades, config_filename=config.yaml, executable=spades.py, channel=bioconda, env=CAP_v2, version=None, python=3) is complete
+[DEBUG] <luigi> (2021-12-31 14:43:34,164): Checking if <CapTask::cap2::remove_human::0a2556edb58b zymo_pos_cntrl/> is complete
+[INFO] <luigi> (2021-12-31 14:43:34,165): Informed scheduler that task   ErrorCorrectReads_True_config_yaml_4_e04191ca63   has status   PENDING
+[DEBUG] <luigi> (2021-12-31 14:43:34,165): Checking if CondaPackage(package=samtools=1.09, config_filename=config.yaml, executable=samtools, channel=bioconda, env=CAP_v2, version=None, python=3) is complete
+[DEBUG] <luigi> (2021-12-31 14:43:34,165): Checking if CondaPackage(package=tbb=2020.2 bowtie2, config_filename=config.yaml, executable=bowtie2, channel=bioconda, env=CAP_v2, version=None, python=3) is complete
+[DEBUG] <luigi> (2021-12-31 14:43:34,165): Checking if HumanRemovalDB(max_ram=0, check_versions=True, config_filename=config.yaml, cores=1) is complete
+[DEBUG] <luigi> (2021-12-31 14:43:34,165): Checking if <CapTask::cap2::remove_mouse::8c80eaf906e3 zymo_pos_cntrl/> is complete
+[INFO] <luigi> (2021-12-31 14:43:34,166): Informed scheduler that task   RemoveHumanReads_True_config_yaml_4_e04191ca63   has status   PENDING
+[DEBUG] <luigi> (2021-12-31 14:43:34,166): Checking if MouseRemovalDB(max_ram=0, check_versions=True, config_filename=config.yaml, cores=1) is complete
+[DEBUG] <luigi> (2021-12-31 14:43:34,166): Checking if <CapTask::cap2::adapter_removal::0a2556ed213e zymo_pos_cntrl/> is complete
+[INFO] <luigi> (2021-12-31 14:43:34,166): Informed scheduler that task   RemoveMouseReads_True_config_yaml_4_e04191ca63   has status   PENDING
+[DEBUG] <luigi> (2021-12-31 14:43:34,166): Checking if CondaPackage(package=adapterremoval, config_filename=config.yaml, executable=AdapterRemoval, channel=bioconda, env=CAP_v2, version=None, python=3) is complete
+[DEBUG] <luigi> (2021-12-31 14:43:34,166): Checking if <CapTask::cap2::base_reads::248514bc41fc zymo_pos_cntrl/> is complete
+[INFO] <luigi> (2021-12-31 14:43:34,167): Informed scheduler that task   AdapterRemoval_True_config_yaml_4_e04191ca63   has status   PENDING
+[INFO] <luigi> (2021-12-31 14:43:34,167): Informed scheduler that task   BaseReads_True_config_yaml_4_e04191ca63   has status   DONE
+[DEBUG] <luigi> (2021-12-31 14:43:34,167): Checking if CondaEnv(name=CAP_v2, python=3, config_filename=config.yaml) is complete
+[INFO] <luigi> (2021-12-31 14:43:34,168): Informed scheduler that task   CondaPackage_bioconda_config_yaml_CAP_v2_36478ec880   has status   PENDING
+[INFO] <luigi> (2021-12-31 14:43:34,168): Informed scheduler that task   CondaEnv_config_yaml_CAP_v2_3_a9f136d31c   has status   PENDING
+[DEBUG] <luigi> (2021-12-31 14:43:34,168): Checking if CondaPackage(package=bowtie2==2.4.1, config_filename=config.yaml, executable=bowtie2-build, channel=bioconda, env=CAP_v2, version=None, python=3) is complete
+[INFO] <luigi> (2021-12-31 14:43:34,168): Informed scheduler that task   MouseRemovalDB_True_config_yaml_1_efea5e4405   has status   PENDING
+[INFO] <luigi> (2021-12-31 14:43:34,168): Informed scheduler that task   CondaPackage_bioconda_config_yaml_CAP_v2_b958bec767   has status   PENDING
+[INFO] <luigi> (2021-12-31 14:43:34,168): Informed scheduler that task   HumanRemovalDB_True_config_yaml_1_efea5e4405   has status   PENDING
+[INFO] <luigi> (2021-12-31 14:43:34,169): Informed scheduler that task   CondaPackage_bioconda_config_yaml_CAP_v2_ec0820e683   has status   PENDING
+[INFO] <luigi> (2021-12-31 14:43:34,169): Informed scheduler that task   CondaPackage_bioconda_config_yaml_CAP_v2_44e9cfeecd   has status   PENDING
+[INFO] <luigi> (2021-12-31 14:43:34,169): Informed scheduler that task   CondaPackage_bioconda_config_yaml_CAP_v2_25db5ab124   has status   PENDING
+[INFO] <luigi> (2021-12-31 14:43:34,169): Informed scheduler that task   CondaPackage_bioconda_config_yaml_CAP_v2_c8328c67c8   has status   PENDING
+[INFO] <luigi> (2021-12-31 14:43:34,169): Informed scheduler that task   ReadStats_True_config_yaml_4_e04191ca63   has status   PENDING
+[DEBUG] <luigi> (2021-12-31 14:43:34,169): Checking if CondaPackage(package=mash==2.2.2, config_filename=config.yaml, executable=mash, channel=bioconda, env=CAP_v2, version=None, python=3) is complete
+[INFO] <luigi> (2021-12-31 14:43:34,170): Informed scheduler that task   Mash_True_config_yaml_4_e04191ca63   has status   PENDING
+[INFO] <luigi> (2021-12-31 14:43:34,170): Informed scheduler that task   CondaPackage_bioconda_config_yaml_CAP_v2_22fcabc612   has status   PENDING
+[DEBUG] <luigi> (2021-12-31 14:43:34,170): Checking if CondaPackage(package=bracken==2.6.0, config_filename=config.yaml, executable=bracken, channel=bioconda, env=CAP_v2_bracken_kraken2, version=None, python=3) is complete
+[DEBUG] <luigi> (2021-12-31 14:43:34,170): Checking if <CapTask::cap2::kraken2::6dcacd77ebb9 zymo_pos_cntrl/> is complete
+[DEBUG] <luigi> (2021-12-31 14:43:34,170): Checking if BrakenKraken2DB(max_ram=0, check_versions=True, config_filename=config.yaml, cores=1) is complete
+[DEBUG] <luigi> (2021-12-31 14:43:34,170): Checking if <CapTask::cap2::clean_reads::0a2556ed3663 zymo_pos_cntrl/> is complete
+[INFO] <luigi> (2021-12-31 14:43:34,171): Informed scheduler that task   BrakenKraken2_True_config_yaml_4_e04191ca63   has status   PENDING
+[DEBUG] <luigi> (2021-12-31 14:43:34,171): Checking if <CapTask::cap2::error_corrected_reads::2e2a15486631 zymo_pos_cntrl/> is complete
+[INFO] <luigi> (2021-12-31 14:43:34,171): Informed scheduler that task   CleanReads_True_config_yaml_1_420a27a2e2   has status   PENDING
+[DEBUG] <luigi> (2021-12-31 14:43:34,171): Checking if <CapTask::cap2::remove_human::0a2556edb58b zymo_pos_cntrl/> is complete
+[INFO] <luigi> (2021-12-31 14:43:34,172): Informed scheduler that task   ErrorCorrectReads_True_config_yaml_1_420a27a2e2   has status   PENDING
+[DEBUG] <luigi> (2021-12-31 14:43:34,172): Checking if <CapTask::cap2::remove_mouse::8c80eaf906e3 zymo_pos_cntrl/> is complete
+[INFO] <luigi> (2021-12-31 14:43:34,172): Informed scheduler that task   RemoveHumanReads_True_config_yaml_1_420a27a2e2   has status   PENDING
+[DEBUG] <luigi> (2021-12-31 14:43:34,172): Checking if <CapTask::cap2::adapter_removal::0a2556ed213e zymo_pos_cntrl/> is complete
+[INFO] <luigi> (2021-12-31 14:43:34,172): Informed scheduler that task   RemoveMouseReads_True_config_yaml_1_420a27a2e2   has status   PENDING
+[DEBUG] <luigi> (2021-12-31 14:43:34,172): Checking if <CapTask::cap2::base_reads::248514bc41fc zymo_pos_cntrl/> is complete
+[INFO] <luigi> (2021-12-31 14:43:34,173): Informed scheduler that task   AdapterRemoval_True_config_yaml_1_420a27a2e2   has status   PENDING
+[INFO] <luigi> (2021-12-31 14:43:34,173): Informed scheduler that task   BaseReads_True_config_yaml_1_420a27a2e2   has status   DONE
+[DEBUG] <luigi> (2021-12-31 14:43:34,173): Checking if Kraken2DB(max_ram=0, check_versions=True, config_filename=config.yaml, cores=1) is complete
+[INFO] <luigi> (2021-12-31 14:43:34,173): Informed scheduler that task   BrakenKraken2DB_True_config_yaml_1_efea5e4405   has status   PENDING
+[DEBUG] <luigi> (2021-12-31 14:43:34,173): Checking if CondaPackage(package=kraken2, config_filename=config.yaml, executable=kraken2, channel=bioconda, env=CAP_v2_kraken2, version=None, python=3) is complete
+[DEBUG] <luigi> (2021-12-31 14:43:34,173): Checking if Kraken2DBDataDown(max_ram=0, check_versions=True, config_filename=config.yaml, cores=1) is complete
+[INFO] <luigi> (2021-12-31 14:43:34,174): Informed scheduler that task   Kraken2DB_True_config_yaml_1_efea5e4405   has status   PENDING
+[INFO] <luigi> (2021-12-31 14:43:34,174): Informed scheduler that task   Kraken2DBDataDown_True_config_yaml_1_efea5e4405   has status   PENDING
+[DEBUG] <luigi> (2021-12-31 14:43:34,174): Checking if CondaEnv(name=CAP_v2_kraken2, python=3, config_filename=config.yaml) is complete
+[INFO] <luigi> (2021-12-31 14:43:34,174): Informed scheduler that task   CondaPackage_bioconda_config_yaml_CAP_v2_kraken2_e67d182499   has status   PENDING
+[INFO] <luigi> (2021-12-31 14:43:34,174): Informed scheduler that task   CondaEnv_config_yaml_CAP_v2_kraken2_3_1b7fa87d9f   has status   PENDING
+[DEBUG] <luigi> (2021-12-31 14:43:34,174): Checking if CondaPackage(package=rsync, config_filename=config.yaml, executable=rsync, channel=conda-forge, env=CAP_v2_kraken2, version=None, python=3) is complete
+[INFO] <luigi> (2021-12-31 14:43:34,175): Informed scheduler that task   Kraken2_True_config_yaml_1_420a27a2e2   has status   PENDING
+[INFO] <luigi> (2021-12-31 14:43:34,175): Informed scheduler that task   CondaPackage_conda_forge_config_yaml_CAP_v2_kraken2_9ea050db19   has status   PENDING
+[DEBUG] <luigi> (2021-12-31 14:43:34,175): Checking if CondaEnv(name=CAP_v2_bracken_kraken2, python=3, config_filename=config.yaml) is complete
+[INFO] <luigi> (2021-12-31 14:43:34,175): Informed scheduler that task   CondaPackage_bioconda_config_yaml_CAP_v2_bracken_k_cff02bf997   has status   PENDING
+[INFO] <luigi> (2021-12-31 14:43:34,175): Informed scheduler that task   CondaEnv_config_yaml_CAP_v2_bracken_k_3_3f965e3b5a   has status   PENDING
+[DEBUG] <luigi> (2021-12-31 14:43:34,175): Checking if PyPiPackage(package=humann==3.0.0a4, config_filename=config.yaml, executable=humann, env=CAP_v2, version=None, python=3) is complete
+[DEBUG] <luigi> (2021-12-31 14:43:34,175): Checking if <CapTask::cap2::diamond::9fbead1febb9 zymo_pos_cntrl/> is complete
+[DEBUG] <luigi> (2021-12-31 14:43:34,176): Checking if HumannIdTable(max_ram=0, check_versions=True, config_filename=config.yaml, cores=4) is complete
+[INFO] <luigi> (2021-12-31 14:43:34,176): Informed scheduler that task   Humann2_True_config_yaml_4_e04191ca63   has status   PENDING
+[DEBUG] <luigi> (2021-12-31 14:43:34,176): Checking if Uniref90(max_ram=0, check_versions=True, config_filename=config.yaml, cores=4) is complete
+[INFO] <luigi> (2021-12-31 14:43:34,176): Informed scheduler that task   HumannIdTable_True_config_yaml_4_76d023641f   has status   PENDING
+[DEBUG] <luigi> (2021-12-31 14:43:34,176): Checking if CondaPackage(package=diamond, config_filename=config.yaml, executable=diamond, channel=bioconda, env=CAP_v2, version=None, python=3) is complete
+[INFO] <luigi> (2021-12-31 14:43:34,177): Informed scheduler that task   Uniref90_True_config_yaml_4_76d023641f   has status   PENDING
+[INFO] <luigi> (2021-12-31 14:43:34,177): Informed scheduler that task   CondaPackage_bioconda_config_yaml_CAP_v2_56d5a5f9d7   has status   PENDING
+[DEBUG] <luigi> (2021-12-31 14:43:34,177): Checking if Uniref90(max_ram=0, check_versions=True, config_filename=config.yaml, cores=1) is complete
+[INFO] <luigi> (2021-12-31 14:43:34,177): Informed scheduler that task   MicaUniref90_True_config_yaml_4_e04191ca63   has status   PENDING
+[INFO] <luigi> (2021-12-31 14:43:34,177): Informed scheduler that task   Uniref90_True_config_yaml_1_efea5e4405   has status   PENDING
+[INFO] <luigi> (2021-12-31 14:43:34,177): Informed scheduler that task   PyPiPackage_config_yaml_CAP_v2_humann_9e78c7f088   has status   PENDING
+[DEBUG] <luigi> (2021-12-31 14:43:34,177): Checking if CondaPackage(package=mash, config_filename=config.yaml, executable=mash, channel=bioconda, env=CAP_v2, version=None, python=3) is complete
+[DEBUG] <luigi> (2021-12-31 14:43:34,178): Checking if HmpDB(max_ram=0, check_versions=True, config_filename=config.yaml, cores=1) is complete
+[INFO] <luigi> (2021-12-31 14:43:34,178): Informed scheduler that task   HmpComparison_True_config_yaml_4_e04191ca63   has status   PENDING
+[INFO] <luigi> (2021-12-31 14:43:34,178): Informed scheduler that task   HmpDB_True_config_yaml_1_efea5e4405   has status   PENDING
+[INFO] <luigi> (2021-12-31 14:43:34,178): Informed scheduler that task   CondaPackage_bioconda_config_yaml_CAP_v2_88418c1a66   has status   PENDING
+[INFO] <luigi> (2021-12-31 14:43:34,178): Done scheduling tasks
+[INFO] <luigi> (2021-12-31 14:43:34,178): Running Worker with 2 processes
+[DEBUG] <luigi> (2021-12-31 14:43:34,178): Asking scheduler for work...
+[DEBUG] <luigi> (2021-12-31 14:43:34,179): Pending tasks: 44
+[DEBUG] <luigi> (2021-12-31 14:43:34,181): Asking scheduler for work...
+[DEBUG] <luigi> (2021-12-31 14:43:34,182): Pending tasks: 43
+[INFO] <luigi> (2021-12-31 14:43:34,182): [pid 619935] Worker Worker(salt=928527233, workers=2, host=nanu, username=nanu, pid=619898) running   CondaEnv(name=CAP_v2, python=3, config_filename=config.yaml)
+[INFO] <cap2> (2021-12-31 14:43:34,184): init conda env: conda env create -f /home/nanu/Projects/CAP2/demo/config/envs/CAP_v2.yml -p vendor/conda/CAP_v2 python=3
+[DEBUG] <luigi> (2021-12-31 14:43:34,184): 2 running tasks, waiting for next task to finish
+[INFO] <luigi> (2021-12-31 14:43:34,184): [pid 619936] Worker Worker(salt=928527233, workers=2, host=nanu, username=nanu, pid=619898) running   CondaEnv(name=CAP_v2_kraken2, python=3, config_filename=config.yaml)
+[INFO] <cap2> (2021-12-31 14:43:34,185): init conda env: conda env create -f /home/nanu/Projects/CAP2/demo/config/envs/CAP_v2_kraken2.yml -p vendor/conda/CAP_v2_kraken2 python=3
+Collecting package metadata (repodata.json): ...working... Collecting package metadata (repodata.json): ...working... done
+Solving environment: ...working... done
+done
+Solving environment: ...working... done
+
+
+==> WARNING: A newer version of conda exists. <==
+  current version: 4.10.3
+  latest version: 4.11.0
+
+Please update conda by running
+
+    $ conda update -n base -c defaults conda
+
+
+Preparing transaction: ...working... done
+Verifying transaction: ...working... done
+Executing transaction: ...working... done
+
+
+==> WARNING: A newer version of conda exists. <==
+  current version: 4.10.3
+  latest version: 4.11.0
+
+Please update conda by running
+
+    $ conda update -n base -c defaults conda
+
+
+#
+# To activate this environment, use
+#
+#     $ conda activate /home/nanu/Projects/CAP2/demo/vendor/conda/CAP_v2_kraken2
+#
+# To deactivate an active environment, use
+#
+#     $ conda deactivate
+
+Preparing transaction: ...working... done
+Verifying transaction: ...working... done
+Executing transaction: ...working... done
+#
+# To activate this environment, use
+#
+#     $ conda activate /home/nanu/Projects/CAP2/demo/vendor/conda/CAP_v2
+#
+# To deactivate an active environment, use
+#
+#     $ conda deactivate
+
+[INFO] <cap2> (2021-12-31 14:43:35,184): conda-installing: pip with conda install -p vendor/conda/CAP_v2 -c anaconda pip -y
+[DEBUG] <luigi> (2021-12-31 14:43:35,185): 2 running tasks, waiting for next task to finish
+[INFO] <cap2> (2021-12-31 14:43:35,190): conda-installing: pip with conda install -p vendor/conda/CAP_v2_kraken2 -c anaconda pip -y
+Collecting package metadata (current_repodata.json): ...working... Collecting package metadata (current_repodata.json): ...working... done
+Solving environment: ...working... done
+Solving environment: ...working... done
+
+
+==> WARNING: A newer version of conda exists. <==
+  current version: 4.10.3
+  latest version: 4.11.0
+
+Please update conda by running
+
+    $ conda update -n base -c defaults conda
+
+
+
+## Package Plan ##
+
+  environment location: /home/nanu/Projects/CAP2/demo/vendor/conda/CAP_v2_kraken2
+
+  added / updated specs:
+    - pip
+
+
+The following NEW packages will be INSTALLED:
+
+  ca-certificates    anaconda/linux-64::ca-certificates-2020.10.14-0
+  certifi            anaconda/linux-64::certifi-2020.6.20-py38_0
+  ld_impl_linux-64   anaconda/linux-64::ld_impl_linux-64-2.33.1-h53a641e_7
+  libedit            anaconda/linux-64::libedit-3.1.20191231-h14c3975_1
+  libffi             anaconda/linux-64::libffi-3.3-he6710b0_2
+  libgcc-ng          anaconda/linux-64::libgcc-ng-9.1.0-hdf63c60_0
+  libstdcxx-ng       anaconda/linux-64::libstdcxx-ng-9.1.0-hdf63c60_0
+  ncurses            anaconda/linux-64::ncurses-6.2-he6710b0_1
+  openssl            anaconda/linux-64::openssl-1.1.1h-h7b6447c_0
+  pip                anaconda/linux-64::pip-20.2.4-py38_0
+  python             anaconda/linux-64::python-3.8.5-h7579374_1
+  readline           anaconda/linux-64::readline-8.0-h7b6447c_0
+  setuptools         anaconda/linux-64::setuptools-50.3.0-py38hb0f4dca_1
+  sqlite             anaconda/linux-64::sqlite-3.33.0-h62c20be_0
+  tk                 anaconda/linux-64::tk-8.6.10-hbc83047_0
+  wheel              anaconda/noarch::wheel-0.35.1-py_0
+  xz                 anaconda/linux-64::xz-5.2.5-h7b6447c_0
+  zlib               anaconda/linux-64::zlib-1.2.11-h7b6447c_3
+
+
+Preparing transaction: ...working... done
+
+
+==> WARNING: A newer version of conda exists. <==
+  current version: 4.10.3
+  latest version: 4.11.0
+
+Please update conda by running
+
+    $ conda update -n base -c defaults conda
+
+
+
+## Package Plan ##
+
+  environment location: /home/nanu/Projects/CAP2/demo/vendor/conda/CAP_v2
+
+  added / updated specs:
+    - pip
+
+
+The following NEW packages will be INSTALLED:
+
+  ca-certificates    anaconda/linux-64::ca-certificates-2020.10.14-0
+  certifi            anaconda/linux-64::certifi-2020.6.20-py38_0
+  ld_impl_linux-64   anaconda/linux-64::ld_impl_linux-64-2.33.1-h53a641e_7
+  libedit            anaconda/linux-64::libedit-3.1.20191231-h14c3975_1
+  libffi             anaconda/linux-64::libffi-3.3-he6710b0_2
+  libgcc-ng          anaconda/linux-64::libgcc-ng-9.1.0-hdf63c60_0
+  libstdcxx-ng       anaconda/linux-64::libstdcxx-ng-9.1.0-hdf63c60_0
+  ncurses            anaconda/linux-64::ncurses-6.2-he6710b0_1
+  openssl            anaconda/linux-64::openssl-1.1.1h-h7b6447c_0
+  pip                anaconda/linux-64::pip-20.2.4-py38_0
+  python             anaconda/linux-64::python-3.8.5-h7579374_1
+  readline           anaconda/linux-64::readline-8.0-h7b6447c_0
+  setuptools         anaconda/linux-64::setuptools-50.3.0-py38hb0f4dca_1
+  sqlite             anaconda/linux-64::sqlite-3.33.0-h62c20be_0
+  tk                 anaconda/linux-64::tk-8.6.10-hbc83047_0
+  wheel              anaconda/noarch::wheel-0.35.1-py_0
+  xz                 anaconda/linux-64::xz-5.2.5-h7b6447c_0
+  zlib               anaconda/linux-64::zlib-1.2.11-h7b6447c_3
+
+
+Preparing transaction: ...working... done
+Verifying transaction: ...working... done
+Verifying transaction: ...working... [DEBUG] <luigi> (2021-12-31 14:43:36,186): 2 running tasks, waiting for next task to finish
+done
+Executing transaction: ...working... done
+Executing transaction: ...working... done
+done
+[DEBUG] <luigi> (2021-12-31 14:43:37,187): 2 running tasks, waiting for next task to finish
+[INFO] <luigi> (2021-12-31 14:43:37,434): [pid 619935] Worker Worker(salt=928527233, workers=2, host=nanu, username=nanu, pid=619898) done      CondaEnv(name=CAP_v2, python=3, config_filename=config.yaml)
+[INFO] <luigi> (2021-12-31 14:43:37,435): Informed scheduler that task   CondaEnv_config_yaml_CAP_v2_3_a9f136d31c   has status   DONE
+[DEBUG] <luigi> (2021-12-31 14:43:37,435): Asking scheduler for work...
+[DEBUG] <luigi> (2021-12-31 14:43:37,436): Pending tasks: 42
+[DEBUG] <luigi> (2021-12-31 14:43:37,437): 2 running tasks, waiting for next task to finish
+[INFO] <luigi> (2021-12-31 14:43:37,438): [pid 620218] Worker Worker(salt=928527233, workers=2, host=nanu, username=nanu, pid=619898) running   CondaPackage(package=jellyfish, config_filename=config.yaml, executable=jellyfish, channel=bioconda, env=CAP_v2, version=None, python=3)
+[INFO] <cap2> (2021-12-31 14:43:37,440): conda-installing: jellyfish with conda install -p vendor/conda/CAP_v2 -c bioconda jellyfish -y
+[INFO] <luigi> (2021-12-31 14:43:37,555): [pid 619936] Worker Worker(salt=928527233, workers=2, host=nanu, username=nanu, pid=619898) done      CondaEnv(name=CAP_v2_kraken2, python=3, config_filename=config.yaml)
+[INFO] <luigi> (2021-12-31 14:43:37,556): Informed scheduler that task   CondaEnv_config_yaml_CAP_v2_kraken2_3_1b7fa87d9f   has status   DONE
+[DEBUG] <luigi> (2021-12-31 14:43:37,556): Asking scheduler for work...
+[DEBUG] <luigi> (2021-12-31 14:43:37,557): Pending tasks: 41
+[DEBUG] <luigi> (2021-12-31 14:43:37,560): 2 running tasks, waiting for next task to finish
+[INFO] <luigi> (2021-12-31 14:43:37,561): [pid 620222] Worker Worker(salt=928527233, workers=2, host=nanu, username=nanu, pid=619898) running   CondaPackage(package=spades, config_filename=config.yaml, executable=spades.py, channel=bioconda, env=CAP_v2, version=None, python=3)
+[INFO] <cap2> (2021-12-31 14:43:37,562): conda-installing: spades with conda install -p vendor/conda/CAP_v2 -c bioconda spades -y
+Collecting package metadata (current_repodata.json): ...working... Collecting package metadata (current_repodata.json): ...working... done
+Solving environment: ...working... done
+
+
+==> WARNING: A newer version of conda exists. <==
+  current version: 4.10.3
+  latest version: 4.11.0
+
+Please update conda by running
+
+    $ conda update -n base -c defaults conda
+
+
+done
+Solving environment: ...working... 
+## Package Plan ##
+
+  environment location: /home/nanu/Projects/CAP2/demo/vendor/conda/CAP_v2
+
+  added / updated specs:
+    - jellyfish
+
+
+The following NEW packages will be INSTALLED:
+
+  jellyfish          bioconda/linux-64::jellyfish-2.2.10-h6bb024c_1
+  jemalloc           bioconda/linux-64::jemalloc-4.5.0-0
+  libgcc             pkgs/main/linux-64::libgcc-7.2.0-h69d50b8_2
+
+The following packages will be UPDATED:
+
+  ca-certificates    anaconda::ca-certificates-2020.10.14-0 --> pkgs/main::ca-certificates-2021.10.26-h06a4308_2
+  certifi                anaconda::certifi-2020.6.20-py38_0 --> pkgs/main::certifi-2021.10.8-py38h06a4308_0
+  openssl               anaconda::openssl-1.1.1h-h7b6447c_0 --> pkgs/main::openssl-1.1.1l-h7f8727e_0
+
+
+Preparing transaction: ...working... done
+Verifying transaction: ...working... done
+done
+Executing transaction: ...working... done
+
+
+==> WARNING: A newer version of conda exists. <==
+  current version: 4.10.3
+  latest version: 4.11.0
+
+Please update conda by running
+
+    $ conda update -n base -c defaults conda
+
+
+
+## Package Plan ##
+
+  environment location: /home/nanu/Projects/CAP2/demo/vendor/conda/CAP_v2
+
+  added / updated specs:
+    - spades
+
+
+The following NEW packages will be INSTALLED:
+
+  spades             bioconda/linux-64::spades-3.13.0-0
+
+The following packages will be UPDATED:
+
+  ca-certificates    anaconda::ca-certificates-2020.10.14-0 --> pkgs/main::ca-certificates-2021.10.26-h06a4308_2
+  certifi                anaconda::certifi-2020.6.20-py38_0 --> pkgs/main::certifi-2021.10.8-py38h06a4308_0
+  openssl               anaconda::openssl-1.1.1h-h7b6447c_0 --> pkgs/main::openssl-1.1.1l-h7f8727e_0
+
+
+Preparing transaction: ...working... done
+Verifying transaction: ...working... done
+Executing transaction: ...working... done
+[DEBUG] <luigi> (2021-12-31 14:43:38,562): 2 running tasks, waiting for next task to finish
+[INFO] <luigi> (2021-12-31 14:43:38,896): [pid 620218] Worker Worker(salt=928527233, workers=2, host=nanu, username=nanu, pid=619898) done      CondaPackage(package=jellyfish, config_filename=config.yaml, executable=jellyfish, channel=bioconda, env=CAP_v2, version=None, python=3)
+[INFO] <luigi> (2021-12-31 14:43:38,899): Informed scheduler that task   CondaPackage_bioconda_config_yaml_CAP_v2_c8328c67c8   has status   DONE
+[DEBUG] <luigi> (2021-12-31 14:43:38,899): Asking scheduler for work...
+[DEBUG] <luigi> (2021-12-31 14:43:38,899): Pending tasks: 40
+[DEBUG] <luigi> (2021-12-31 14:43:38,901): 2 running tasks, waiting for next task to finish
+[INFO] <luigi> (2021-12-31 14:43:38,902): [pid 620468] Worker Worker(salt=928527233, workers=2, host=nanu, username=nanu, pid=619898) running   CondaPackage(package=tbb=2020.2 bowtie2, config_filename=config.yaml, executable=bowtie2, channel=bioconda, env=CAP_v2, version=None, python=3)
+[INFO] <cap2> (2021-12-31 14:43:38,904): conda-installing: tbb=2020.2 bowtie2 with conda install -p vendor/conda/CAP_v2 -c bioconda tbb=2020.2 bowtie2 -y
+[INFO] <luigi> (2021-12-31 14:43:39,022): [pid 620222] Worker Worker(salt=928527233, workers=2, host=nanu, username=nanu, pid=619898) done      CondaPackage(package=spades, config_filename=config.yaml, executable=spades.py, channel=bioconda, env=CAP_v2, version=None, python=3)
+[INFO] <luigi> (2021-12-31 14:43:39,023): Informed scheduler that task   CondaPackage_bioconda_config_yaml_CAP_v2_25db5ab124   has status   DONE
+[DEBUG] <luigi> (2021-12-31 14:43:39,023): Asking scheduler for work...
+[DEBUG] <luigi> (2021-12-31 14:43:39,024): Pending tasks: 39
+[DEBUG] <luigi> (2021-12-31 14:43:39,026): 2 running tasks, waiting for next task to finish
+[INFO] <luigi> (2021-12-31 14:43:39,026): [pid 620472] Worker Worker(salt=928527233, workers=2, host=nanu, username=nanu, pid=619898) running   CondaPackage(package=samtools=1.09, config_filename=config.yaml, executable=samtools, channel=bioconda, env=CAP_v2, version=None, python=3)
+[INFO] <cap2> (2021-12-31 14:43:39,028): conda-installing: samtools=1.09 with conda install -p vendor/conda/CAP_v2 -c bioconda samtools=1.09 -y
+Collecting package metadata (current_repodata.json): ...working... Collecting package metadata (current_repodata.json): ...working... done
+Solving environment: ...working... failed with initial frozen solve. Retrying with flexible solve.
+Collecting package metadata (repodata.json): ...working... done
+Solving environment: ...working... failed with initial frozen solve. Retrying with flexible solve.
+Solving environment: ...working... [DEBUG] <luigi> (2021-12-31 14:43:40,027): 2 running tasks, waiting for next task to finish
+failed with repodata from current_repodata.json, will retry with next repodata source.
+Collecting package metadata (repodata.json): ...working... done
+Solving environment: ...working... [DEBUG] <luigi> (2021-12-31 14:43:41,028): 2 running tasks, waiting for next task to finish
+done
+
+
+==> WARNING: A newer version of conda exists. <==
+  current version: 4.10.3
+  latest version: 4.11.0
+
+Please update conda by running
+
+    $ conda update -n base -c defaults conda
+
+
+
+## Package Plan ##
+
+  environment location: /home/nanu/Projects/CAP2/demo/vendor/conda/CAP_v2
+
+  added / updated specs:
+    - bowtie2
+    - tbb=2020.2
+
+
+The following NEW packages will be INSTALLED:
+
+  bowtie2            bioconda/linux-64::bowtie2-2.4.1-py38he513fc3_0
+  perl               pkgs/main/linux-64::perl-5.26.2-h14c3975_0
+  tbb                pkgs/main/linux-64::tbb-2020.2-hff7bd54_0
+
+
+Preparing transaction: ...working... done
+Verifying transaction: ...working... done
+Solving environment: ...working... done
+Executing transaction: ...working... done
+[DEBUG] <luigi> (2021-12-31 14:43:42,030): 2 running tasks, waiting for next task to finish
+[INFO] <luigi> (2021-12-31 14:43:43,014): [pid 620468] Worker Worker(salt=928527233, workers=2, host=nanu, username=nanu, pid=619898) done      CondaPackage(package=tbb=2020.2 bowtie2, config_filename=config.yaml, executable=bowtie2, channel=bioconda, env=CAP_v2, version=None, python=3)
+[INFO] <luigi> (2021-12-31 14:43:43,015): Informed scheduler that task   CondaPackage_bioconda_config_yaml_CAP_v2_ec0820e683   has status   DONE
+[DEBUG] <luigi> (2021-12-31 14:43:43,015): Asking scheduler for work...
+[DEBUG] <luigi> (2021-12-31 14:43:43,016): Pending tasks: 38
+[DEBUG] <luigi> (2021-12-31 14:43:43,018): 2 running tasks, waiting for next task to finish
+[INFO] <luigi> (2021-12-31 14:43:43,019): [pid 621078] Worker Worker(salt=928527233, workers=2, host=nanu, username=nanu, pid=619898) running   CondaPackage(package=adapterremoval, config_filename=config.yaml, executable=AdapterRemoval, channel=bioconda, env=CAP_v2, version=None, python=3)
+[INFO] <cap2> (2021-12-31 14:43:43,021): conda-installing: adapterremoval with conda install -p vendor/conda/CAP_v2 -c bioconda adapterremoval -y
+Collecting package metadata (current_repodata.json): ...working... failed with initial frozen solve. Retrying with flexible solve.
+Solving environment: ...working... done
+Solving environment: ...working... done
+
+
+==> WARNING: A newer version of conda exists. <==
+  current version: 4.10.3
+  latest version: 4.11.0
+
+Please update conda by running
+
+    $ conda update -n base -c defaults conda
+
+
+
+## Package Plan ##
+
+  environment location: /home/nanu/Projects/CAP2/demo/vendor/conda/CAP_v2
+
+  added / updated specs:
+    - adapterremoval
+
+
+The following NEW packages will be INSTALLED:
+
+  adapterremoval     bioconda/linux-64::adapterremoval-2.3.2-hb7ba0dd_0
+  bzip2              pkgs/main/linux-64::bzip2-1.0.8-h7b6447c_0
+
+
+Preparing transaction: ...working... done
+Verifying transaction: ...working... done
+Executing transaction: ...working... done
+[DEBUG] <luigi> (2021-12-31 14:43:44,020): 2 running tasks, waiting for next task to finish
+[INFO] <luigi> (2021-12-31 14:43:44,316): [pid 621078] Worker Worker(salt=928527233, workers=2, host=nanu, username=nanu, pid=619898) done      CondaPackage(package=adapterremoval, config_filename=config.yaml, executable=AdapterRemoval, channel=bioconda, env=CAP_v2, version=None, python=3)
+[INFO] <luigi> (2021-12-31 14:43:44,317): Informed scheduler that task   CondaPackage_bioconda_config_yaml_CAP_v2_36478ec880   has status   DONE
+[DEBUG] <luigi> (2021-12-31 14:43:44,317): Asking scheduler for work...
+[DEBUG] <luigi> (2021-12-31 14:43:44,318): Pending tasks: 37
+[DEBUG] <luigi> (2021-12-31 14:43:44,321): 2 running tasks, waiting for next task to finish
+[INFO] <luigi> (2021-12-31 14:43:44,322): [pid 621231] Worker Worker(salt=928527233, workers=2, host=nanu, username=nanu, pid=619898) running   <CapTask::cap2::adapter_removal::0a2556ed213e zymo_pos_cntrl/>
+[DEBUG] <cap2> (2021-12-31 14:43:44,322): starting run for <CapTask::cap2::adapter_removal::0a2556ed213e zymo_pos_cntrl/>
+[DEBUG] <cap2> (2021-12-31 14:43:44,322): running module for <CapTask::cap2::adapter_removal::0a2556ed213e zymo_pos_cntrl/>
+[DEBUG] <cap2> (2021-12-31 14:43:44,351): writing run metadata for <CapTask::cap2::adapter_removal::0a2556ed213e zymo_pos_cntrl/>
+[INFO] <luigi> (2021-12-31 14:43:44,356): [pid 621231] Worker Worker(salt=928527233, workers=2, host=nanu, username=nanu, pid=619898) done      <CapTask::cap2::adapter_removal::0a2556ed213e zymo_pos_cntrl/>
+[INFO] <luigi> (2021-12-31 14:43:44,357): Informed scheduler that task   AdapterRemoval_True_config_yaml_4_e04191ca63   has status   DONE
+[DEBUG] <luigi> (2021-12-31 14:43:44,357): Asking scheduler for work...
+[DEBUG] <luigi> (2021-12-31 14:43:44,358): Pending tasks: 36
+[DEBUG] <luigi> (2021-12-31 14:43:44,359): 2 running tasks, waiting for next task to finish
+[INFO] <luigi> (2021-12-31 14:43:44,359): [pid 621240] Worker Worker(salt=928527233, workers=2, host=nanu, username=nanu, pid=619898) running   CondaPackage(package=bowtie2==2.4.1, config_filename=config.yaml, executable=bowtie2-build, channel=bioconda, env=CAP_v2, version=None, python=3)
+[INFO] <cap2> (2021-12-31 14:43:44,360): conda-installing: bowtie2==2.4.1 with conda install -p vendor/conda/CAP_v2 -c bioconda bowtie2==2.4.1 -y
+done
+
+
+==> WARNING: A newer version of conda exists. <==
+  current version: 4.10.3
+  latest version: 4.11.0
+
+Please update conda by running
+
+    $ conda update -n base -c defaults conda
+
+
+
+## Package Plan ##
+
+  environment location: /home/nanu/Projects/CAP2/demo/vendor/conda/CAP_v2
+
+  added / updated specs:
+    - samtools=1.09
+
+
+The following NEW packages will be INSTALLED:
+
+  bzip2              pkgs/main/linux-64::bzip2-1.0.8-h7b6447c_0
+  curl               pkgs/main/linux-64::curl-7.69.1-hbc83047_0
+  htslib             bioconda/linux-64::htslib-1.9-h4da6232_3
+  krb5               pkgs/main/linux-64::krb5-1.17.1-h173b8e3_0
+  libcurl            pkgs/main/linux-64::libcurl-7.69.1-h20c2e04_0
+  libdeflate         bioconda/linux-64::libdeflate-1.2-h516909a_1
+  libssh2            pkgs/main/linux-64::libssh2-1.9.0-h1ba5d50_1
+  samtools           bioconda/linux-64::samtools-1.9-h10a08f8_12
+
+The following packages will be SUPERSEDED by a higher-priority channel:
+
+  libedit            anaconda::libedit-3.1.20191231-h14c39~ --> pkgs/main::libedit-3.1.20181209-hc058e9b_0
+  libffi                    anaconda::libffi-3.3-he6710b0_2 --> pkgs/main::libffi-3.2.1-hf484d3e_1007
+  ncurses                  anaconda::ncurses-6.2-he6710b0_1 --> pkgs/main::ncurses-6.1-he6710b0_1
+  python                  anaconda::python-3.8.5-h7579374_1 --> pkgs/main::python-3.8.1-h0371630_1
+  readline                anaconda::readline-8.0-h7b6447c_0 --> pkgs/main::readline-7.0-h7b6447c_5
+  sqlite                 anaconda::sqlite-3.33.0-h62c20be_0 --> pkgs/main::sqlite-3.31.1-h7b6447c_0
+
+
+Preparing transaction: ...working... Collecting package metadata (current_repodata.json): ...working... done
+Verifying transaction: ...working... done
+Solving environment: ...working... done
+
+
+==> WARNING: A newer version of conda exists. <==
+  current version: 4.10.3
+  latest version: 4.11.0
+
+Please update conda by running
+
+    $ conda update -n base -c defaults conda
+
+
+
+# All requested packages already installed.
+
+[DEBUG] <luigi> (2021-12-31 14:43:45,360): 2 running tasks, waiting for next task to finish
+done
+Executing transaction: ...working... [INFO] <luigi> (2021-12-31 14:43:45,693): [pid 621240] Worker Worker(salt=928527233, workers=2, host=nanu, username=nanu, pid=619898) done      CondaPackage(package=bowtie2==2.4.1, config_filename=config.yaml, executable=bowtie2-build, channel=bioconda, env=CAP_v2, version=None, python=3)
+[INFO] <luigi> (2021-12-31 14:43:45,695): Informed scheduler that task   CondaPackage_bioconda_config_yaml_CAP_v2_b958bec767   has status   DONE
+[DEBUG] <luigi> (2021-12-31 14:43:45,695): Asking scheduler for work...
+[DEBUG] <luigi> (2021-12-31 14:43:45,695): Pending tasks: 35
+[DEBUG] <luigi> (2021-12-31 14:43:45,698): 2 running tasks, waiting for next task to finish
+[INFO] <luigi> (2021-12-31 14:43:45,699): [pid 621397] Worker Worker(salt=928527233, workers=2, host=nanu, username=nanu, pid=619898) running   HumanRemovalDB(max_ram=0, check_versions=True, config_filename=config.yaml, cores=1)
+done
+[DEBUG] <luigi> (2021-12-31 14:43:46,699): 2 running tasks, waiting for next task to finish
+[INFO] <luigi> (2021-12-31 14:43:47,412): [pid 620472] Worker Worker(salt=928527233, workers=2, host=nanu, username=nanu, pid=619898) done      CondaPackage(package=samtools=1.09, config_filename=config.yaml, executable=samtools, channel=bioconda, env=CAP_v2, version=None, python=3)
+[INFO] <luigi> (2021-12-31 14:43:47,413): Informed scheduler that task   CondaPackage_bioconda_config_yaml_CAP_v2_44e9cfeecd   has status   DONE
+[DEBUG] <luigi> (2021-12-31 14:43:47,413): Asking scheduler for work...
+[DEBUG] <luigi> (2021-12-31 14:43:47,414): Pending tasks: 34
+[DEBUG] <luigi> (2021-12-31 14:43:47,416): 2 running tasks, waiting for next task to finish
+[INFO] <luigi> (2021-12-31 14:43:47,417): [pid 621407] Worker Worker(salt=928527233, workers=2, host=nanu, username=nanu, pid=619898) running   MouseRemovalDB(max_ram=0, check_versions=True, config_filename=config.yaml, cores=1)
+[DEBUG] <luigi> (2021-12-31 14:43:48,418): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:43:49,419): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:43:50,420): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:43:51,422): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:43:52,423): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:43:53,424): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:43:54,425): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:43:55,426): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:43:56,427): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:43:57,428): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:43:58,430): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:43:59,431): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:44:00,432): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:44:01,433): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:44:02,434): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:44:03,435): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:44:04,436): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:44:05,438): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:44:06,439): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:44:07,440): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:44:08,441): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:44:09,442): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:44:10,443): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:44:11,444): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:44:12,445): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:44:13,446): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:44:14,447): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:44:15,448): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:44:16,450): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:44:17,451): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:44:18,452): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:44:19,453): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:44:20,454): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:44:21,455): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:44:22,456): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:44:23,457): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:44:24,458): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:44:25,459): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:44:26,460): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:44:27,462): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:44:28,463): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:44:29,464): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:44:30,465): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:44:31,466): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:44:32,467): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:44:33,468): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:44:34,470): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:44:35,471): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:44:36,472): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:44:37,473): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:44:38,474): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:44:39,475): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:44:40,476): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:44:41,477): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:44:42,478): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:44:43,479): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:44:44,480): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:44:45,481): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:44:46,482): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:44:47,483): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:44:48,484): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:44:49,486): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:44:50,487): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:44:51,488): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:44:52,489): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:44:53,490): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:44:54,491): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:44:55,492): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:44:56,493): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:44:57,494): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:44:58,495): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:44:59,496): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:45:00,498): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:45:01,499): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:45:02,500): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:45:03,501): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:45:04,502): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:45:05,503): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:45:06,504): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:45:07,505): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:45:08,506): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:45:09,507): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:45:10,508): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:45:11,510): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:45:12,511): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:45:13,512): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:45:14,513): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:45:15,514): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:45:16,515): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:45:17,516): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:45:18,518): 2 running tasks, waiting for next task to finish
+/bin/sh: 1: vendor/conda/CAP_v2/bin/bowtie2-builddemo_db/GRCm39/GCA_000001635.9_GRCm39_genomic.fna.gz: not found
+[ERROR] <luigi> (2021-12-31 14:45:18,860): [pid 621407] Worker Worker(salt=928527233, workers=2, host=nanu, username=nanu, pid=619898) failed    MouseRemovalDB(max_ram=0, check_versions=True, config_filename=config.yaml, cores=1)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/luigi-3.0.3-py3.8.egg/luigi/worker.py", line 191, in run
+    new_deps = self._run_get_new_deps()
+  File "/usr/local/lib/python3.8/dist-packages/luigi-3.0.3-py3.8.egg/luigi/worker.py", line 133, in _run_get_new_deps
+    task_gen = self.task.run()
+  File "/usr/local/lib/python3.8/dist-packages/cap2-0.4.1-py3.8.egg/cap2/pipeline/databases/mouse_removal_db.py", line 110, in run
+    self.build_bowtie2_index_from_fasta()
+  File "/usr/local/lib/python3.8/dist-packages/cap2-0.4.1-py3.8.egg/cap2/pipeline/databases/mouse_removal_db.py", line 88, in build_bowtie2_index_from_fasta
+    subprocess.check_call(cmd, shell=True)
+  File "/usr/lib/python3.8/subprocess.py", line 364, in check_call
+    raise CalledProcessError(retcode, cmd)
+subprocess.CalledProcessError: Command 'vendor/conda/CAP_v2/bin/bowtie2-builddemo_db/GRCm39/GCA_000001635.9_GRCm39_genomic.fna.gz demo_db/GRCm39/mouse_removal.bt2' returned non-zero exit status 127.
+[INFO] <luigi> (2021-12-31 14:45:18,865): Informed scheduler that task   MouseRemovalDB_True_config_yaml_1_efea5e4405   has status   FAILED
+[DEBUG] <luigi> (2021-12-31 14:45:18,865): Asking scheduler for work...
+[DEBUG] <luigi> (2021-12-31 14:45:18,866): Pending tasks: 34
+[DEBUG] <luigi> (2021-12-31 14:45:18,868): 2 running tasks, waiting for next task to finish
+[INFO] <luigi> (2021-12-31 14:45:18,869): [pid 621668] Worker Worker(salt=928527233, workers=2, host=nanu, username=nanu, pid=619898) running   CondaPackage(package=mash==2.2.2, config_filename=config.yaml, executable=mash, channel=bioconda, env=CAP_v2, version=None, python=3)
+[INFO] <cap2> (2021-12-31 14:45:18,870): conda-installing: mash==2.2.2 with conda install -p vendor/conda/CAP_v2 -c bioconda mash==2.2.2 -y
+Collecting package metadata (current_repodata.json): ...working... done
+Solving environment: ...working... [DEBUG] <luigi> (2021-12-31 14:45:19,869): 2 running tasks, waiting for next task to finish
+failed with initial frozen solve. Retrying with flexible solve.
+Solving environment: ...working... failed with repodata from current_repodata.json, will retry with next repodata source.
+Collecting package metadata (repodata.json): ...working... [DEBUG] <luigi> (2021-12-31 14:45:20,870): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:45:21,871): 2 running tasks, waiting for next task to finish
+done
+Solving environment: ...working... [DEBUG] <luigi> (2021-12-31 14:45:22,872): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:45:23,873): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:45:24,874): 2 running tasks, waiting for next task to finish
+failed with initial frozen solve. Retrying with flexible solve.
+Solving environment: ...working... [DEBUG] <luigi> (2021-12-31 14:45:25,875): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:45:26,876): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:45:27,877): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:45:28,878): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:45:29,879): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:45:30,880): 2 running tasks, waiting for next task to finish
+Building graph of deps:   0%|          | 0/7 [00:00<?, ?it/s]Examining @/linux-64::__cuda==11.2=0:   0%|          | 0/7 [00:00<?, ?it/s]Examining @/linux-64::__linux==5.11.0=0:  14%|█▍        | 1/7 [00:00<00:00, 10330.80it/s]Examining @/linux-64::__unix==0=0:  29%|██▊       | 2/7 [00:00<00:00, 11475.52it/s]      Examining @/linux-64::__archspec==1=x86_64:  43%|████▎     | 3/7 [00:00<00:00, 12384.76it/s]Examining python=3.8:  57%|█████▋    | 4/7 [00:00<00:00, 12995.52it/s]                      Examining @/linux-64::__glibc==2.31=0:  71%|███████▏  | 5/7 [00:00<00:00, 48.13it/s]Examining @/linux-64::__glibc==2.31=0:  86%|████████▌ | 6/7 [00:00<00:00, 57.71it/s]Examining mash==2.2.2:  86%|████████▌ | 6/7 [00:00<00:00, 57.71it/s]                                                                                    Determining conflicts:   0%|          | 0/7 [00:00<?, ?it/s]Examining conflict for mash python:   0%|          | 0/7 [00:00<?, ?it/s]Examining conflict for mash python __glibc:  14%|█▍        | 1/7 [00:00<00:00, 102.42it/s]                                                                                          
+Found conflicts! Looking for incompatible packages.
+This can take several minutes.  Press CTRL-C to abort.
+failed
+
+UnsatisfiableError: The following specifications were found to be incompatible with each other:
+
+Output in format: Requested package -> Available versions
+
+Package _libgcc_mutex conflicts for:
+mash==2.2.2 -> libgcc-ng[version='>=7.5.0'] -> _libgcc_mutex[version='*|0.1',build=main]
+python=3.8 -> libgcc-ng[version='>=7.5.0'] -> _libgcc_mutex[version='*|0.1',build=main]
+
+Package libgcc-ng conflicts for:
+mash==2.2.2 -> zlib[version='>=1.2.11,<1.3.0a0'] -> libgcc-ng[version='>=7.2.0']
+mash==2.2.2 -> libgcc-ng[version='>=7.3.0|>=7.5.0']The following specifications were found to be incompatible with your system:
+
+  - feature:/linux-64::__glibc==2.31=0
+  - feature:|@/linux-64::__glibc==2.31=0
+  - python=3.8 -> libgcc-ng[version='>=7.5.0'] -> __glibc[version='>=2.17']
+
+Your installed version is: 2.31
+
+
+[DEBUG] <luigi> (2021-12-31 14:45:31,881): 2 running tasks, waiting for next task to finish
+Subprocess failed from /home/nanu/Projects/CAP2/demo: ['conda', 'install', '-p', 'vendor/conda/CAP_v2', '-c', 'bioconda', 'mash==2.2.2', '-y']
+[ERROR] <luigi> (2021-12-31 14:45:32,344): [pid 621668] Worker Worker(salt=928527233, workers=2, host=nanu, username=nanu, pid=619898) failed    CondaPackage(package=mash==2.2.2, config_filename=config.yaml, executable=mash, channel=bioconda, env=CAP_v2, version=None, python=3)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/luigi-3.0.3-py3.8.egg/luigi/worker.py", line 191, in run
+    new_deps = self._run_get_new_deps()
+  File "/usr/local/lib/python3.8/dist-packages/luigi-3.0.3-py3.8.egg/luigi/worker.py", line 133, in _run_get_new_deps
+    task_gen = self.task.run()
+  File "/usr/local/lib/python3.8/dist-packages/cap2-0.4.1-py3.8.egg/cap2/pipeline/utils/conda.py", line 194, in run
+    self._env.install(self.package, self.channel)
+  File "/usr/local/lib/python3.8/dist-packages/cap2-0.4.1-py3.8.egg/cap2/pipeline/utils/conda.py", line 110, in install
+    subprocess.check_call(' '.join(cmd), shell=True)
+  File "/usr/lib/python3.8/subprocess.py", line 364, in check_call
+    raise CalledProcessError(retcode, cmd)
+subprocess.CalledProcessError: Command 'conda install -p vendor/conda/CAP_v2 -c bioconda mash==2.2.2 -y' returned non-zero exit status 1.
+[INFO] <luigi> (2021-12-31 14:45:32,350): Informed scheduler that task   CondaPackage_bioconda_config_yaml_CAP_v2_22fcabc612   has status   FAILED
+[DEBUG] <luigi> (2021-12-31 14:45:32,350): Asking scheduler for work...
+[DEBUG] <luigi> (2021-12-31 14:45:32,351): Pending tasks: 34
+[DEBUG] <luigi> (2021-12-31 14:45:32,353): 2 running tasks, waiting for next task to finish
+[INFO] <luigi> (2021-12-31 14:45:32,354): [pid 622231] Worker Worker(salt=928527233, workers=2, host=nanu, username=nanu, pid=619898) running   <CapTask::cap2::adapter_removal::0a2556ed213e zymo_pos_cntrl/>
+[DEBUG] <cap2> (2021-12-31 14:45:32,354): starting run for <CapTask::cap2::adapter_removal::0a2556ed213e zymo_pos_cntrl/>
+[DEBUG] <cap2> (2021-12-31 14:45:32,355): running module for <CapTask::cap2::adapter_removal::0a2556ed213e zymo_pos_cntrl/>
+[DEBUG] <cap2> (2021-12-31 14:45:32,375): writing run metadata for <CapTask::cap2::adapter_removal::0a2556ed213e zymo_pos_cntrl/>
+[INFO] <luigi> (2021-12-31 14:45:32,382): [pid 622231] Worker Worker(salt=928527233, workers=2, host=nanu, username=nanu, pid=619898) done      <CapTask::cap2::adapter_removal::0a2556ed213e zymo_pos_cntrl/>
+[INFO] <luigi> (2021-12-31 14:45:32,384): Informed scheduler that task   AdapterRemoval_True_config_yaml_1_420a27a2e2   has status   DONE
+[DEBUG] <luigi> (2021-12-31 14:45:32,384): Asking scheduler for work...
+[DEBUG] <luigi> (2021-12-31 14:45:32,385): Pending tasks: 33
+[DEBUG] <luigi> (2021-12-31 14:45:32,387): 2 running tasks, waiting for next task to finish
+[INFO] <luigi> (2021-12-31 14:45:32,387): [pid 622237] Worker Worker(salt=928527233, workers=2, host=nanu, username=nanu, pid=619898) running   CondaPackage(package=kraken2, config_filename=config.yaml, executable=kraken2, channel=bioconda, env=CAP_v2_kraken2, version=None, python=3)
+[INFO] <cap2> (2021-12-31 14:45:32,389): conda-installing: kraken2 with conda install -p vendor/conda/CAP_v2_kraken2 -c bioconda kraken2 -y
+Collecting package metadata (current_repodata.json): ...working... done
+Solving environment: ...working... [DEBUG] <luigi> (2021-12-31 14:45:33,388): 2 running tasks, waiting for next task to finish
+failed with initial frozen solve. Retrying with flexible solve.
+Solving environment: ...working... failed with repodata from current_repodata.json, will retry with next repodata source.
+Collecting package metadata (repodata.json): ...working... [DEBUG] <luigi> (2021-12-31 14:45:34,389): 2 running tasks, waiting for next task to finish
+done
+Solving environment: ...working... [DEBUG] <luigi> (2021-12-31 14:45:35,390): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:45:36,391): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:45:37,392): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:45:38,397): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:45:39,398): 2 running tasks, waiting for next task to finish
+done
+
+
+==> WARNING: A newer version of conda exists. <==
+  current version: 4.10.3
+  latest version: 4.11.0
+
+Please update conda by running
+
+    $ conda update -n base -c defaults conda
+
+
+[DEBUG] <luigi> (2021-12-31 14:45:40,399): 2 running tasks, waiting for next task to finish
+
+## Package Plan ##
+
+  environment location: /home/nanu/Projects/CAP2/demo/vendor/conda/CAP_v2_kraken2
+
+  added / updated specs:
+    - kraken2
+
+
+The following NEW packages will be INSTALLED:
+
+  blast              bioconda/linux-64::blast-2.10.1-pl526he19e7b1_3
+  bzip2              pkgs/main/linux-64::bzip2-1.0.8-h7b6447c_0
+  curl               pkgs/main/linux-64::curl-7.71.1-h8f29fe8_2
+  entrez-direct      bioconda/linux-64::entrez-direct-16.2-he881be0_0
+  kraken2            bioconda/linux-64::kraken2-2.0.7_beta-pl526h2d50403_0
+  krb5               pkgs/main/linux-64::krb5-1.19.1-h3535a68_0
+  libcurl            pkgs/main/linux-64::libcurl-7.71.1-h303737a_2
+  libssh2            pkgs/main/linux-64::libssh2-1.9.0-h1ba5d50_1
+  pcre               pkgs/main/linux-64::pcre-8.45-h295c915_0
+  perl               pkgs/main/linux-64::perl-5.26.2-h14c3975_0
+  perl-archive-tar   bioconda/linux-64::perl-archive-tar-2.32-pl526_0
+  perl-carp          bioconda/linux-64::perl-carp-1.38-pl526_3
+  perl-common-sense  bioconda/linux-64::perl-common-sense-3.74-pl526_2
+  perl-compress-raw~ bioconda/linux-64::perl-compress-raw-bzip2-2.087-pl526he1b5a44_0
+  perl-compress-raw~ bioconda/linux-64::perl-compress-raw-zlib-2.087-pl526hc9558a2_0
+  perl-exporter      bioconda/linux-64::perl-exporter-5.72-pl526_1
+  perl-exporter-tiny bioconda/linux-64::perl-exporter-tiny-1.002001-pl526_0
+  perl-extutils-mak~ bioconda/linux-64::perl-extutils-makemaker-7.36-pl526_1
+  perl-io-compress   bioconda/linux-64::perl-io-compress-2.087-pl526he1b5a44_0
+  perl-io-zlib       bioconda/linux-64::perl-io-zlib-1.10-pl526_2
+  perl-json          bioconda/linux-64::perl-json-4.02-pl526_0
+  perl-json-xs       bioconda/linux-64::perl-json-xs-2.34-pl526h6bb024c_3
+  perl-list-moreuti~ bioconda/linux-64::perl-list-moreutils-0.428-pl526_1
+  perl-list-moreuti~ bioconda/linux-64::perl-list-moreutils-xs-0.428-pl526_0
+  perl-pathtools     bioconda/linux-64::perl-pathtools-3.75-pl526h14c3975_1
+  perl-scalar-list-~ bioconda/linux-64::perl-scalar-list-utils-1.52-pl526h516909a_0
+  perl-types-serial~ bioconda/linux-64::perl-types-serialiser-1.0-pl526_2
+  perl-xsloader      bioconda/linux-64::perl-xsloader-0.24-pl526_0
+
+The following packages will be UPDATED:
+
+  ca-certificates    anaconda::ca-certificates-2020.10.14-0 --> pkgs/main::ca-certificates-2021.10.26-h06a4308_2
+  certifi                anaconda::certifi-2020.6.20-py38_0 --> pkgs/main::certifi-2021.10.8-py38h06a4308_0
+  openssl               anaconda::openssl-1.1.1h-h7b6447c_0 --> pkgs/main::openssl-1.1.1l-h7f8727e_0
+
+
+Preparing transaction: ...working... done
+Verifying transaction: ...working... done
+Executing transaction: ...working... done
+[DEBUG] <luigi> (2021-12-31 14:45:41,401): 2 running tasks, waiting for next task to finish
+[INFO] <luigi> (2021-12-31 14:45:42,085): [pid 622237] Worker Worker(salt=928527233, workers=2, host=nanu, username=nanu, pid=619898) done      CondaPackage(package=kraken2, config_filename=config.yaml, executable=kraken2, channel=bioconda, env=CAP_v2_kraken2, version=None, python=3)
+[INFO] <luigi> (2021-12-31 14:45:42,086): Informed scheduler that task   CondaPackage_bioconda_config_yaml_CAP_v2_kraken2_e67d182499   has status   DONE
+[DEBUG] <luigi> (2021-12-31 14:45:42,086): Asking scheduler for work...
+[DEBUG] <luigi> (2021-12-31 14:45:42,087): Pending tasks: 32
+[DEBUG] <luigi> (2021-12-31 14:45:42,089): 2 running tasks, waiting for next task to finish
+[INFO] <luigi> (2021-12-31 14:45:42,090): [pid 623112] Worker Worker(salt=928527233, workers=2, host=nanu, username=nanu, pid=619898) running   Kraken2DBDataDown(max_ram=0, check_versions=True, config_filename=config.yaml, cores=1)
+[INFO] <luigi> (2021-12-31 14:45:42,091): [pid 623112] Worker Worker(salt=928527233, workers=2, host=nanu, username=nanu, pid=619898) done      Kraken2DBDataDown(max_ram=0, check_versions=True, config_filename=config.yaml, cores=1)
+[INFO] <luigi> (2021-12-31 14:45:42,092): Informed scheduler that task   Kraken2DBDataDown_True_config_yaml_1_efea5e4405   has status   DONE
+[DEBUG] <luigi> (2021-12-31 14:45:42,092): Asking scheduler for work...
+[DEBUG] <luigi> (2021-12-31 14:45:42,093): Pending tasks: 31
+[DEBUG] <luigi> (2021-12-31 14:45:42,095): 2 running tasks, waiting for next task to finish
+[INFO] <luigi> (2021-12-31 14:45:42,096): [pid 623114] Worker Worker(salt=928527233, workers=2, host=nanu, username=nanu, pid=619898) running   Kraken2DB(max_ram=0, check_versions=True, config_filename=config.yaml, cores=1)
+[DEBUG] <luigi> (2021-12-31 14:45:43,097): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:45:44,098): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:45:45,100): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:45:46,101): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:45:47,102): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:45:48,103): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:45:49,104): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:45:50,106): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:45:51,107): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:45:52,108): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:45:53,109): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:45:54,110): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:45:55,111): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:45:56,112): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:45:57,113): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:45:58,114): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:45:59,115): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:46:00,116): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:46:01,117): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:46:02,119): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:46:03,120): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:46:04,121): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:46:05,123): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:46:06,124): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:46:07,125): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:46:08,126): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:46:09,127): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:46:10,128): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:46:11,130): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:46:12,131): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:46:13,132): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:46:14,133): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:46:15,134): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:46:16,135): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:46:17,136): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:46:18,138): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:46:19,139): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:46:20,140): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:46:21,141): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:46:22,142): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:46:23,143): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:46:24,144): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:46:25,145): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:46:26,146): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:46:27,147): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:46:28,148): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:46:29,150): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:46:30,151): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:46:31,152): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:46:32,153): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:46:33,154): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:46:34,155): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:46:35,156): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:46:36,157): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:46:37,158): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:46:38,159): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:46:39,160): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:46:40,161): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:46:41,162): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:46:42,163): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:46:43,164): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:46:44,165): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:46:45,166): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:46:46,167): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:46:47,168): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:46:48,169): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:46:49,170): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:46:50,172): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:46:51,173): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:46:52,174): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:46:53,175): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:46:54,177): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:46:55,177): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:46:56,178): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:46:57,180): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:46:58,181): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:46:59,182): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:47:00,183): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:47:01,184): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:47:02,185): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:47:03,186): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:47:04,187): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:47:05,188): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:47:06,189): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:47:07,190): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:47:08,191): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:47:09,192): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:47:10,194): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:47:11,195): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:47:12,196): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:47:13,197): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:47:14,198): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:47:15,199): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:47:16,200): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:47:17,201): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:47:18,202): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:47:19,203): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:47:20,204): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:47:21,205): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:47:22,206): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:47:23,207): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:47:24,208): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:47:25,210): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:47:26,211): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:47:27,212): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:47:28,213): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:47:29,214): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:47:30,215): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:47:31,216): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:47:32,217): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:47:33,218): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:47:34,219): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:47:35,220): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:47:36,222): 2 running tasks, waiting for next task to finish
+[DEBUG] <luigi> (2021-12-31 14:47:37,223): 2 running tasks, waiting for next task to finish
+[INFO] <luigi> (2021-12-31 14:47:37,643): Worker Worker(salt=928527233, workers=2, host=nanu, username=nanu, pid=619898) was stopped. Shutting down Keep-Alive thread
+Process ContextManagedTaskProcess-10:
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/multiprocessing/process.py", line 315, in _bootstrap
+    self.run()
+  File "/usr/local/lib/python3.8/dist-packages/luigi-3.0.3-py3.8.egg/luigi/worker.py", line 285, in run
+    super(ContextManagedTaskProcess, self).run()
+  File "/usr/local/lib/python3.8/dist-packages/luigi-3.0.3-py3.8.egg/luigi/worker.py", line 191, in run
+    new_deps = self._run_get_new_deps()
+  File "/usr/local/lib/python3.8/dist-packages/luigi-3.0.3-py3.8.egg/luigi/worker.py", line 133, in _run_get_new_deps
+    task_gen = self.task.run()
+  File "/usr/local/lib/python3.8/dist-packages/cap2-0.4.1-py3.8.egg/cap2/pipeline/databases/human_removal_db.py", line 95, in run
+    self.download_bowtie2_index_from_s3()
+  File "/usr/local/lib/python3.8/dist-packages/cap2-0.4.1-py3.8.egg/cap2/pipeline/databases/human_removal_db.py", line 89, in download_bowtie2_index_from_s3
+    self.run_cmd(cmd)
+  File "/usr/local/lib/python3.8/dist-packages/cap2-0.4.1-py3.8.egg/cap2/pipeline/utils/cap_task.py", line 225, in run_cmd
+    job = subprocess.run(
+  File "/usr/lib/python3.8/subprocess.py", line 495, in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+  File "/usr/lib/python3.8/subprocess.py", line 1028, in communicate
+    stdout, stderr = self._communicate(input, endtime, timeout)
+  File "/usr/lib/python3.8/subprocess.py", line 1868, in _communicate
+    ready = selector.select(timeout)
+  File "/usr/lib/python3.8/selectors.py", line 415, in select
+    fd_event_list = self._selector.poll(timeout)
+KeyboardInterrupt
+Process ContextManagedTaskProcess-16:
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/multiprocessing/process.py", line 315, in _bootstrap
+    self.run()
+  File "/usr/local/lib/python3.8/dist-packages/luigi-3.0.3-py3.8.egg/luigi/worker.py", line 285, in run
+    super(ContextManagedTaskProcess, self).run()
+  File "/usr/local/lib/python3.8/dist-packages/luigi-3.0.3-py3.8.egg/luigi/worker.py", line 191, in run
+    new_deps = self._run_get_new_deps()
+  File "/usr/local/lib/python3.8/dist-packages/luigi-3.0.3-py3.8.egg/luigi/worker.py", line 133, in _run_get_new_deps
+    task_gen = self.task.run()
+  File "/usr/local/lib/python3.8/dist-packages/cap2-0.4.1-py3.8.egg/cap2/pipeline/databases/kraken2_db.py", line 127, in run
+    self.download_kraken2_db_from_s3()
+  File "/usr/local/lib/python3.8/dist-packages/cap2-0.4.1-py3.8.egg/cap2/pipeline/databases/kraken2_db.py", line 153, in download_kraken2_db_from_s3
+    self.run_cmd(cmd)
+  File "/usr/local/lib/python3.8/dist-packages/cap2-0.4.1-py3.8.egg/cap2/pipeline/utils/cap_task.py", line 225, in run_cmd
+    job = subprocess.run(
+  File "/usr/lib/python3.8/subprocess.py", line 495, in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+  File "/usr/lib/python3.8/subprocess.py", line 1028, in communicate
+    stdout, stderr = self._communicate(input, endtime, timeout)
+  File "/usr/lib/python3.8/subprocess.py", line 1868, in _communicate
+    ready = selector.select(timeout)
+  File "/usr/lib/python3.8/selectors.py", line 415, in select
+    fd_event_list = self._selector.poll(timeout)
+KeyboardInterrupt
+
+Aborted!
+make: *** [Makefile:3: qc] Error 1
